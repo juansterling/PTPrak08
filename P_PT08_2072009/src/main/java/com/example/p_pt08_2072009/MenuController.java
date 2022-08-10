@@ -46,7 +46,8 @@ public class MenuController {
     public MenuItem simplerep;
     public MenuItem grouprep;
     private Stage stage;
-    ObservableList<Menu> listmenu,listmenu2;
+    ObservableList<Menu> listmenu= FXCollections.observableArrayList();
+    ObservableList<Menu> listmenu2;
     ObservableList<Category> listcat;
 
     public MenuController() {
@@ -81,6 +82,7 @@ public class MenuController {
 
     public void ShowData() {
         MenuDao dao = new MenuDao();
+        this.listmenu.clear();
         this.listmenu = FXCollections.observableArrayList(dao.getData());
         this.tabelmenu.setItems(this.listmenu);
         this.colid.setCellValueFactory(new PropertyValueFactory("idmenu"));
