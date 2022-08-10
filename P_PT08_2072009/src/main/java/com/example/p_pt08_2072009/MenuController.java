@@ -121,6 +121,7 @@ public class MenuController {
         this.harga.clear();
         this.desc.clear();
         this.isicategory.getSelectionModel().select(-1);
+        idmenu.setDisable(false);
     }
 
 
